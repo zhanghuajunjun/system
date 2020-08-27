@@ -1,18 +1,40 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <div></div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import axios from 'axios'
+ export default {
+   name: '',
+   props: {
 
-export default {
-  name: 'Home',
-  components: {
-    HelloWorld
-  }
-}
+   },
+   data () {
+     return {
+
+     }
+   },
+   components: {
+
+   },
+   methods: {
+     getData(){
+       axios.get('http://49.233.66.125:3030/menu').then(res => {
+         console.log(res);
+       }).then(err => {})
+     }
+   },
+   mounted() {
+     this.getData()
+   },
+   watch: {
+
+   },
+   computed: {
+
+   }
+ }
 </script>
+
+<style scoped lang='scss'>
+</style>
